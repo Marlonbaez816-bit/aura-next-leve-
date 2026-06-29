@@ -1,0 +1,357 @@
+/* ============================================
+   AURA APP - Componentes UI
+   ============================================ */
+
+/* Notificaciones */
+.welcome-notification,
+.levelup-notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 90%;
+    max-width: 400px;
+}
+
+.notification-content,
+.levelup-content {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    gap: 15px;
+}
+
+.notification-icon {
+    font-size: 32px;
+}
+
+.notification-text strong {
+    display: block;
+    color: #764ba2;
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.notification-text p {
+    color: #666;
+    font-size: 14px;
+    margin: 0;
+}
+
+.levelup-content {
+    flex-direction: column;
+    text-align: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 30px;
+}
+
+.levelup-icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.levelup-content h3 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.levelup-content p {
+    opacity: 0.9;
+}
+
+/* Modal del Asistente */
+.assistant-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 400px;
+    max-height: 80vh;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.close-btn {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.close-btn:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.modal-body {
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.assistant-avatar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.aura-sphere-small {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8), rgba(138,43,226,0.6));
+    box-shadow: 0 0 40px rgba(138,43,226,0.6);
+    animation: spherePulse 3s ease-in-out infinite;
+}
+
+.assistant-message {
+    background: rgba(138,43,226,0.1);
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.assistant-message p {
+    margin: 0;
+    color: #764ba2;
+    font-size: 15px;
+}
+
+.quick-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.action-btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: left;
+}
+
+.action-btn:active {
+    transform: scale(0.98);
+    box-shadow: 0 5px 15px rgba(138,43,226,0.3);
+}
+
+/* Esfera Mejorada */
+.sphere-container {
+    position: relative;
+}
+
+.thought-bubble {
+    position: absolute;
+    animation: bubbleFloat 3s ease-in-out infinite;
+}
+
+@keyframes bubbleFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
+
+/* Barra de Progreso Animada */
+.progress-bar {
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill {
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.4),
+        transparent
+    );
+    animation: progressShine 2s infinite;
+}
+
+@keyframes progressShine {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Tarjetas Interactivas */
+.feature-card {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.2),
+        transparent
+    );
+    transition: left 0.5s;
+}
+
+.feature-card:hover::before {
+    left: 100%;
+}
+
+/* Botones Flotantes */
+.fab {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    font-size: 28px;
+    box-shadow: 0 8px 25px rgba(138,43,226,0.4);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 100;
+}
+
+.fab:active {
+    transform: scale(0.9);
+    box-shadow: 0 5px 15px rgba(138,43,226,0.3);
+}
+
+/* Skeleton Loading */
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        rgba(255,255,255,0.1) 25%,
+        rgba(255,255,255,0.2) 50%,
+        rgba(255,255,255,0.1) 75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+    border-radius: 10px;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Badges */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.badge-new {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+}
+
+.badge-hot {
+    background: linear-gradient(135deg, #fa709a, #fee140);
+}
+
+/* Tooltips */
+.tooltip {
+    position: relative;
+}
+
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-5px);
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+}
+
+.tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
