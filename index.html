@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura - Red Social</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Pantalla de Carga -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="sphere-container">
+            <div class="aura-sphere">
+                <div class="sphere-glow"></div>
+                <div class="sphere-ring ring-1"></div>
+                <div class="sphere-ring ring-2"></div>
+                <div class="sphere-ring ring-3"></div>
+            </div>
+            
+            <!-- Avatar Aura -->
+            <div id="auraAvatar" class="aura-avatar running">
+                <div class="avatar-body">
+                    <div class="avatar-head">
+                        <div class="avatar-face">
+                            <div class="avatar-eyes"></div>
+                            <div class="avatar-smile"></div>
+                        </div>
+                        <div class="avatar-hair"></div>
+                    </div>
+                    <div class="avatar-outfit"></div>
+                </div>
+            </div>
+            
+            <!-- Burbujas de diálogo -->
+            <div id="thoughtBubble" class="thought-bubble">
+                <span id="bubbleText">Cargando Aura...</span>
+            </div>
+        </div>
+        
+        <div class="loading-text">
+            <h1>Aura</h1>
+            <p id="loadingMessage">Preparando tu experiencia...</p>
+        </div>
+        
+        <div class="progress-bar">
+            <div id="progressFill" class="progress-fill"></div>
+        </div>
+    </div>
+
+    <!-- App Principal (oculta al inicio) -->
+    <div id="mainApp" class="main-app hidden">
+        <header class="app-header">
+            <div class="header-logo">✨ Aura</div>
+            <div class="header-actions">
+                <button class="icon-btn">🔔</button>
+                <button class="icon-btn">⚙️</button>
+            </div>
+        </header>
+
+        <main class="app-content">
+            <section class="welcome-section">
+                <h2>¡Bienvenido a Aura!</h2>
+                <p>Tu red social con estilo</p>
+            </section>
+
+            <section class="features-grid">
+                <div class="feature-card glass">
+                    <div class="feature-icon">📸</div>
+                    <h3>Ecos</h3>
+                    <p>Comparte momentos</p>
+                </div>
+                <div class="feature-card glass">
+                    <div class="feature-icon">💬</div>
+                    <h3>Chat</h3>
+                    <p>Conecta con otros</p>
+                </div>
+                <div class="feature-card glass">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Ranking</h3>
+                    <p>Sube de nivel</p>
+                </div>
+                <div class="feature-card glass">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Asistente</h3>
+                    <p>Aura te ayuda</p>
+                </div>
+            </section>
+        </main>
+
+        <nav class="bottom-nav glass">
+            <button class="nav-item active">🏠</button>
+            <button class="nav-item">🔍</button>
+            <button class="nav-item">➕</button>
+            <button class="nav-item">💬</button>
+            <button class="nav-item">👤</button>
+        </nav>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
